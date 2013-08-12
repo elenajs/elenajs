@@ -48,13 +48,18 @@ define({
 	// used here
 	loader: {
 		// Packages that should be registered with the loader in each testing environment
-		packages: [ { name: 'elenajs', location: 'lib' },
-                    {name: 'dojo', location: 'node_modules/dojo' }]
                 
-//                packages: [ 
-//                    { name: 'elenajs', location: 'lib' } 
-//                ],
-//                map: { 'elenajs': { dojo: '/node_modules/dojo' } }
+//		packages: [ { name: 'elenajs', location: 'lib' },
+//                    {name: 'dojo', location: 'node_modules/dojo' }]
+                
+                packages: [ 
+                    { name: 'elenajs', location: 'lib' }, 
+                    { name: 'tests', location: 'tests' } 
+                ],
+                map: { 
+                    'elenajs': { dojo: 'node_modules/dojo' },
+                    'tests': { dojo: 'node_modules/dojo' }
+                }
 	},
 
 	// Non-functional test suite(s) to run in each browser

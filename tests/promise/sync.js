@@ -26,16 +26,12 @@ define([
                     var f1 = makeDeferred(1),
                             f2 = makeDeferred(2),
                             f3 = makeDeferred(3);
-
-
                     sync([f1, f2, f3], function(val) {
                         return val > 1;
                     }).then(dfd.callback(
                             function(val) {
                                 assert.isTrue(2 === val, "Expected 2 while got " + val);
                             }, dfd.reject.bind(dfd)));
-
-
                 }
     });
 });
