@@ -2,8 +2,9 @@ define([
     "intern!object",
     "intern/chai!assert",
     "elenajs/promise/sync",
-    "dojo/Deferred"
-], function(registerSuite, assert, sync, Deferred) {
+    "dojo/Deferred",
+    "dojo/promise/Promise"
+], function(registerSuite, assert, sync, Deferred, Promise) {
     var makeDeferred = function(val) {
         return function() {
             var d = new Deferred();
@@ -14,13 +15,21 @@ define([
                     d.reject(val);
                 }
             }, 100);
+            
             return d.promise;
         };
     };
 
     registerSuite({
         name: "promise.sync",
-        "test Deferred synchronization":
+        "test sync is a Promise":
+                function() {
+                    var s = sync([], function() {
+                        return undefined;
+                    });
+                    assert.isTrue(s instanceof Promise, "sync does NOT return a dojo.promise.Promise");                    
+                },
+        "test sync":
                 function() {
                     var dfd = this.async(1000);
                     var f1 = makeDeferred(1),
@@ -32,7 +41,20 @@ define([
                             function(val) {
                                 assert.isTrue(2 === val, "Expected 2 while got " + val);
                             }, dfd.reject.bind(dfd)));
-                }
+                },
+        "test sync none matches":
+                function() {
+                    var dfd = this.async(1000);
+                    var f1 = makeDeferred(1),
+                            f2 = makeDeferred(2),
+                            f3 = makeDeferred(3);
+                    sync([f1, f2, f3], function(val) {
+                        return val > 4;
+                    }).then(dfd.callback(
+                            function(val) {
+                                assert.isTrue(val === undefined, "Expected undefined while got " + val);
+                            }, dfd.reject.bind(dfd)));
+                },
     });
 });
 

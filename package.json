@@ -6,9 +6,9 @@
     "start": "node server"
   },
   "dependencies": {
-    "formaline": "2.0.1",
+    "formidable": "~1.0.4",
     "mimetype": "0.0.5",
-    "dojo": "https://github.com/csnover/dojo2-core/archive/2.0.tar.gz",
+    "dojo": "https://github.com/dojo/dojo/archive/1.9.1.tar.gz",
     "setten": "https://github.com/kitsonk/setten/archive/0.1.6.tar.gz"
   },
   "devDependencies": {
