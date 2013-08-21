@@ -15,7 +15,7 @@ define([
                     d.reject(val);
                 }
             }, 100);
-            
+
             return d.promise;
         };
     };
@@ -27,7 +27,7 @@ define([
                     var s = sync([], function() {
                         return undefined;
                     });
-                    assert.isTrue(s instanceof Promise, "sync does NOT return a dojo.promise.Promise");                    
+                    assert.isTrue(s instanceof Promise, "sync does NOT return a dojo.promise.Promise");
                 },
         "test sync":
                 function() {
@@ -40,6 +40,17 @@ define([
                     }).then(dfd.callback(
                             function(val) {
                                 assert.isTrue(2 === val, "Expected 2 while got " + val);
+                            }, dfd.reject.bind(dfd)));
+                },
+        "test sync on empty array":
+                function() {
+                    var dfd = this.async(1000);
+                    var s = sync([], function() {
+                        return undefined;
+                    });
+                    s.then(dfd.callback(
+                            function(val) {
+                                assert.isTrue(val === undefined, "Expected undefined on empty array while got " + val);
                             }, dfd.reject.bind(dfd)));
                 },
         "test sync none matches":
