@@ -1,6 +1,6 @@
 define([
-    "./promise/sync"
-    ,"./dispatch/request"
+    "./dispatch/request"
+    ,"./promise/sync"
 ], 1);
 
 
