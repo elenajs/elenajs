@@ -13,14 +13,7 @@ if (typeof process !== 'undefined' && typeof define === 'undefined') {
     require([
         'demo/Server'
     ], function(Server) {
-        /*
         var server = new Server();
-
         server.start();
-        */
-       for (var key in this) {
-       console.log('------> ', key);
-        }
-        console.log(config);
     });
 }
