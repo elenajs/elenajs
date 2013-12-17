@@ -10,11 +10,9 @@
     "lib": "./lib"
   },
   "dependencies": {
-    "amd-autoconf": "*",
     "formidable": "~1.0.4",
     "mimetype": "0.0.5",
-    "amd-autoconf": "https://github.com/kiuma/amd-autoconf/archive/amd-autoconf-0.0.2.tar.gz",
-    "dojo": "https://github.com/dojo/dojo/archive/1.9.1.tar.gz",
+    "dojo": "https://github.com/dojo/dojo/archive/1.9.2.tar.gz",
     "setten": "https://github.com/kitsonk/setten/archive/0.1.6.tar.gz"
   },
   "amdDependencies": {

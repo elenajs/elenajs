@@ -1,6 +1,12 @@
 define([
-    "./dispatch/request"
-    ,"./promise/sync"
-], 1);
+    './promise/sync',
+    './dispatch/request'
+],1);
+
+//function (has, require) {
+//    has.add('host-node', true);
+//    has.add('host-browser', false);
+//    require();
+//});
 
 

@@ -1,8 +1,6 @@
 if (typeof process !== 'undefined' && typeof define === 'undefined') {
     var ejs = require('../lib/elenajs');
-
-//    amdConfig = ejs.createConfig({baseUrl: __dirname});
-    amdConfig = ejs.createConfig({
+    var amdConfig = ejs.createConfig({
         packages: [
             {
                 name: 'demo',
@@ -15,8 +13,14 @@ if (typeof process !== 'undefined' && typeof define === 'undefined') {
     require([
         'demo/Server'
     ], function(Server) {
+        /*
         var server = new Server();
 
         server.start();
+        */
+       for (var key in this) {
+       console.log('------> ', key);
+        }
+        console.log(config);
     });
 }

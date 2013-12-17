@@ -27,7 +27,7 @@ define([
                     var s = sync([], function() {
                         return undefined;
                     });
-                    assert.isTrue(s instanceof Promise, "sync does NOT return a dojo.promise.Promise");
+                    assert.isTrue(s.toString().match(/Promise/).length > 0, "sync does NOT return a dojo.promise.Promise" );
                 },
         "test sync":
                 function() {
@@ -65,7 +65,7 @@ define([
                             function(val) {
                                 assert.isTrue(val === undefined, "Expected undefined while got " + val);
                             }, dfd.reject.bind(dfd)));
-                },
+                }
     });
 });
 
