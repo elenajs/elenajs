@@ -20,6 +20,7 @@
       "setten": "setten"
   },
   "devDependencies": {
-    "intern": "~1.2.0"
+    "intern": "~1.2.0",
+    "swig": "~1.2.2"
   }
 }

@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -16,6 +16,14 @@ define([
     var resourcesUrl = path.resolve('./demo/resources');
     return declare('demo/dispatchers/StaticResources', FSDispatcher, {
         matcher: /^\/resources\//,
-        path: resourcesUrl
+        path: resourcesUrl,
+        dispatch: function(req) {
+            new FileRenderer({
+                request: req,
+                response: res,
+                filename: resource,
+                deferred: deferredPointer
+            }).render();
+        }
     });
 });

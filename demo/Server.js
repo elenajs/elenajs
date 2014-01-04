@@ -5,13 +5,10 @@
  */
 
 define([
-    "dojo/has",
     "dojo/_base/declare",
     "elenajs/Server",
     "./_dispatchers"
-], function(has, declare, _Server, dispatchers) {
-    has.add('host-node',true);
-    has.add('host-browser',false);
+], function(declare, _Server, dispatchers) {
     return declare('demo/Server', _Server, {
         dispatchers: dispatchers
     });
