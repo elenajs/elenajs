@@ -1,0 +1,22 @@
+{% extends 'Template.html' %}
+
+
+{% block body %}
+
+{% if name %}
+<p>
+    Hello {{name}}
+</p>
+{% endif %}
+
+<form method="POST">
+    <label for="name">Please enter your name</label>
+    <input type="text" name="name" id="name">
+    <div>
+        <button type="submit">Say hello</button>
+        <button type="reset">Cancel</button>
+    </div>
+</form>
+
+
+{% endblock %}

@@ -16,14 +16,6 @@ define([
     var resourcesUrl = path.resolve('./demo/resources');
     return declare('demo/dispatchers/StaticResources', FSDispatcher, {
         matcher: /^\/resources\//,
-        path: resourcesUrl,
-        dispatch: function(req) {
-            new FileRenderer({
-                request: req,
-                response: res,
-                filename: resource,
-                deferred: deferredPointer
-            }).render();
-        }
+        path: resourcesUrl
     });
 });
