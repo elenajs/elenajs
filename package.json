@@ -1,26 +1,44 @@
 {
-  "name": "elenajs",
-  "version": "0.0.2",
-  "author": {
-    "name": "kiuma",
-    "email": "kiuma72@gmail.com"
-  },
-  "main": "./lib/elenajs",
-  "directories": {
-    "lib": "./lib"
-  },
-  "dependencies": {
-    "formidable": "~1.0.4",
-    "mimetype": "0.0.5",
-    "dojo": "https://github.com/dojo/dojo/archive/1.9.2.tar.gz",
-    "setten": "https://github.com/kitsonk/setten/archive/0.1.6.tar.gz"
-  },
-  "amdDependencies": {
-      "dojo": "dojo",
-      "setten": "setten"
-  },
-  "devDependencies": {
-    "intern": "~1.2.0",
-    "swig": "~1.2.2"
-  }
+    "name": "elenajs",
+    "version": "0.0.2",
+    "author": {
+        "name": "kiuma",
+        "email": "kiuma72@gmail.com"
+    },
+    "main": "./lib/elenajs",
+    "directories": {
+        "lib": "./lib"
+    },
+    "dependencies": {
+        "formidable": "~1.0.4",
+        "mimetype": "0.0.5",
+        "dojo": "https://github.com/dojo/dojo/archive/1.9.2.tar.gz",
+        "setten": "https://github.com/kitsonk/setten/archive/0.1.6.tar.gz"
+    },
+    "amdDependencies": {
+        "dojo": "dojo",
+        "setten": "setten"
+    },
+    "devDependencies": {
+        "intern": "~1.2.0",
+        "swig": "~1.2.2",
+        "jsdoc": "~3.3.0"
+    },
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "source": {
+        "includePattern": ".+\\.js(doc)?$"
+    },
+    "plugins": [],
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    },
+    "opts": {
+        "destination": "./api/",
+        "verbose": true,
+        "recurse": true
+    }
+
 }
