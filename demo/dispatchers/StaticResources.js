@@ -7,13 +7,13 @@
 define([
     "dojo/_base/declare",
     "elenajs/dispatchers/FSDispatcher",
-    "dojo/node!path"
+    "require"
 ], function(
         declare,
         FSDispatcher,
-        path
+        require
         ) {
-    var resourcesUrl = path.resolve('./demo/resources');
+    var resourcesUrl = require.toUrl("./resources");
     return declare('demo/dispatchers/StaticResources', FSDispatcher, {
         matcher: /^\/resources\//,
         path: resourcesUrl
