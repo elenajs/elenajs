@@ -22,12 +22,12 @@ define([
 
     registerSuite({
         name: "promise.sync",
-        "test sync is a Promise":
+        "test sync is a Deferred":
                 function() {
                     var s = sync([], function() {
                         return undefined;
                     });
-                    assert.isTrue(s.toString().match(/Promise/).length > 0, "sync does NOT return a dojo.promise.Promise" );
+                    assert.isTrue(s.toString().match(/Deferred/).length > 0, "sync does NOT return a dojo/Deferred" );
                 },
         "test sync":
                 function() {

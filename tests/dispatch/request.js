@@ -24,7 +24,7 @@ define([
             data.server.start();
         },
         teardown: function() {
-//            data.server.stop();
+            data.server.stop();
         },
         "test (404) page not found":
                 function() {

@@ -19,13 +19,10 @@ if (typeof process !== 'undefined' && typeof define === 'undefined') {
             console.log('server started on port: ' + server.port);
         });
         on(server, 'stop', function() {
-            console.log('server started stopped');
+            console.log('server stopped');
         });
         on(server, 'request', function(data) {
-            console.info(data.response.statusCode + ' ' + data.request.url);
-        });
-        on(server, 'finishRequest', function(data) {
-            console.info('finishRequest: '+ data.response.statusCode + ' ' + data.request.url);
+            console.info('Requiring: ' + data.response.statusCode + ' ' + data.request.url);
         });
         on(server, 'message', function(data) {
             console.info(data);
