@@ -13,7 +13,7 @@ define([
         FSDispatcher,
         require
         ) {
-    var resourcesUrl = require.toUrl("./resources");
+    var resourcesUrl = require.toUrl("../resources");
     return declare('demo/dispatchers/StaticResources', FSDispatcher, {
         matcher: /^\/resources\//,
         path: resourcesUrl
