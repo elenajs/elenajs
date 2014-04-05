@@ -20,12 +20,10 @@ define([
     return declare('demo/dispatchers/Page1', RequestDispatcher, {
         matcher: /^\/pages\/page1.html$/i,
         title: 'Page 1',
-        render: function(req, res, deferredPointer) {
+        render: function(deferredPointer) {
             var self = this;
             new TemplateRenderer({
-                request: req,
-                response: res,
-                deferred: deferredPointer,
+                httpDeferred: deferredPointer,
                 templateObj: template
             }).render(self);
         }

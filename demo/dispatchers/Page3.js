@@ -25,13 +25,11 @@ define([
         render: function(req, res, deferredPointer) {
             var self = this;
             var renderer = new TemplateRenderer({
-                    request: req,
-                    response: res,
-                    deferred: deferredPointer,
+                    httpDeferred: deferredPointer,
                     templateObj: template
                 });
             this.processRequest(/*arguments*/req, res, deferredPointer).then(function(data) {
-                renderer.render(lang.mixin(data, self));
+                renderer.render(lang.mixin({}, data, self));
             }, function(err) {
                 if (!deferredPointer.isFulfilled()) {
                     deferredPointer.reject(err);
