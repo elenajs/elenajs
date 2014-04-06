@@ -2,9 +2,10 @@ define([
     "intern!object",
     "intern/chai!assert",
     "elenajs/promise/sync",
+    "elenajs/HttpDeferred",
     "dojo/Deferred",
     "dojo/promise/Promise"
-], function(registerSuite, assert, sync, Deferred, Promise) {
+], function(registerSuite, assert, sync, HttpDeferred, Deferred, Promise) {
     var makeDeferred = function(val) {
         return function() {
             var d = new Deferred();
@@ -27,7 +28,7 @@ define([
                     var s = sync([], function() {
                         return undefined;
                     });
-                    assert.isTrue(s.toString().match(/Deferred/).length > 0, "sync does NOT return a dojo/Deferred" );
+                    assert.isTrue(s.toString().match(/Deferred/).length > 0, "sync does NOT return a dojo/Deferred");
                 },
         "test sync":
                 function() {
@@ -65,6 +66,14 @@ define([
                             function(val) {
                                 assert.isTrue(val === undefined, "Expected undefined while got " + val);
                             }, dfd.reject.bind(dfd)));
+                },
+        "test deferred object":
+                function() {
+                    var req = {status: 200}, res = {},
+                            dfd = new HttpDeferred({httpRequest: req, httpResponse: res});
+
+                    assert.isTrue(dfd.httpRequest.status === 200, "Expected undefined while got " + dfd.httpRequest.status)
+
                 }
     });
 });
