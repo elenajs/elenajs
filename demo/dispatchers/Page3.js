@@ -17,8 +17,6 @@ define([
         TemplateRenderer,
         template
         ) {
-
-
     return declare('demo/dispatchers/Page3', RequestDispatcher, {
         matcher: /^\/pages\/page3.html$/i,
         title: 'Page 3',
