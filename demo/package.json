@@ -1,18 +1,17 @@
 {
-  "name": "application-name",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node server"
-  },
-  "dependencies": {
-    "formidable": "~1.0.4",
-    "mimetype": "0.0.5",
-    "dojo": "https://github.com/dojo/dojo/archive/1.9.1.tar.gz",
-    "setten": "https://github.com/kitsonk/setten/archive/0.1.6.tar.gz"
-  },
-  "devDependencies": {
-    "intern": "~1.2.0"
-  }
-  
+    "name": "application-name",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "formidable": "~1.0.4",
+        "mimetype": "0.0.5",
+        "dojo": "https://github.com/dojo/dojo/archive/1.9.1.tar.gz",
+        "setten": "https://github.com/kitsonk/setten/archive/0.1.6.tar.gz"
+    },
+    "devDependencies": {
+        "intern": "~1.2.0"
+    },
+    "amdDependencies": {
+        "elenajs": "elenajs"
+    }
 }
