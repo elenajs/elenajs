@@ -26,9 +26,9 @@ define([
         render: function(deferredPointer) {
             var self = this;
             menu.render().then(function (data) {
-                self._renderTemplate(deferredPointer, {title: self.title, menu: data});
+                self._renderTemplate(deferredPointer, {title: self.title, menu: data});                
             }, function (err) {
-                deferredPointer.signal(err);
+               deferredPointer.signal(err);               
             });
             
         }, 
