@@ -9,25 +9,38 @@ define([
     "dojo/_base/lang",
     "elenajs/dispatchers/RequestDispatcher",
     "elenajs/renderers/TemplateRenderer",
-    "elenajs/http/swig!./templates/Page3.html"
+    "elenajs/template!./templates/Form.html",
+    "elenajs/template!./templates/_menu.html"
 ], function(
         declare,
         lang,
         RequestDispatcher,
         TemplateRenderer,
-        template
+        template,
+        menu
         ) {
     return declare('demo/dispatchers/Page3', RequestDispatcher, {
-        matcher: /^\/pages\/page3.html$/i,
-        title: 'Page 3',
+        matcher: /^\/form.html$/i,
+        title: 'ElenaJS Demo Form',
         render: function(deferredPointer) {
+            var self = this;
+            menu.render().then(function (data) {
+                self._renderTemplate(deferredPointer, {title: self.title, menu: data, greerings: ''});
+            }, function (err) {
+                deferredPointer.signal(err);
+            });
+        },
+        _renderTemplate: function (deferredPointer, params) {
             var self = this;
             var renderer = new TemplateRenderer({
                     httpDeferred: deferredPointer,
                     templateObj: template
                 });
             this.processRequest(deferredPointer).then(function(data) {
-                renderer.render(lang.mixin({}, data, self));
+                if (data.name) {
+                    data.greetings= '<p>Hello ' + escape(data.name) + '</p>'; 
+                }
+                renderer.render(lang.mixin({}, data, params));
             }, function(err) {
                 if (!deferredPointer.isFulfilled()) {
                     deferredPointer.reject(err);

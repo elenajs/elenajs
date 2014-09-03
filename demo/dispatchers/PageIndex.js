@@ -8,24 +8,35 @@ define([
     "dojo/_base/declare",
     "elenajs/dispatchers/RequestDispatcher",
     "elenajs/renderers/TemplateRenderer",
-    "elenajs/http/swig!./templates/Page1.html"
+    "elenajs/template!./templates/Index.html",
+    "elenajs/template!./templates/_menu.html"
 ], function(
         declare,
         RequestDispatcher,
         TemplateRenderer,
-        template
+        template,
+        menu
         ) {
 
 
     return declare('demo/dispatchers/Page1', RequestDispatcher, {
-        matcher: /^\/pages\/page1.html$/i,
-        title: 'Page 1',
+        matcher: /^\/$|^\/index.html$/i,
+        title: 'ElenaJs Demo Home',
+        menu: '',
         render: function(deferredPointer) {
             var self = this;
+            menu.render().then(function (data) {
+                self._renderTemplate(deferredPointer, {title: self.title, menu: data});
+            }, function (err) {
+                deferredPointer.signal(err);
+            });
+            
+        }, 
+        _renderTemplate: function (deferredPointer, params) {
             new TemplateRenderer({
                 httpDeferred: deferredPointer,
                 templateObj: template
-            }).render(self);
+            }).render(params);
         }
     });
 });

@@ -1,6 +1,7 @@
 {
   "name": "elenajs",
-  "version": "0.0.4",
+  "amdName": "elenajs",
+  "version": "0.0.5",
   "author": {
     "name": "kiuma",
     "email": "kiuma72@gmail.com"
