@@ -6,6 +6,17 @@
     "name": "kiuma",
     "email": "kiuma72@gmail.com"
   },
+  "keywords": [
+      "web",
+      "framework",
+      "amd",
+      "dojo",
+      "dojotoolkit",
+      "isomorphic"
+      ],
+  "homepage": "http://elenajs.org/",    
+  "repository": "elenajs/elenajs",
+  "license": "BSD",
   "main": "./lib/elenajs",
   "directories": {
     "lib": "./lib"
