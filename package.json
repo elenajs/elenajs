@@ -24,6 +24,7 @@
     "lib": "./lib"
   },
   "dependencies": {
+    "dcl": "1.1.x",
     "formidable": "1.0.x",
     "mimetype": "0.0.x",
     "dojo": "https://github.com/dojo/dojo/archive/1.10.0.tar.gz",
@@ -31,6 +32,7 @@
   },
   "amdDependencies": {
     "dojo": "dojo",
+    "dcl": "dcl",
     "setten": "setten"
   },
   "devDependencies": {
