@@ -27,13 +27,12 @@
     "dcl": "1.1.x",
     "formidable": "1.0.x",
     "mimetype": "0.0.x",
-    "dojo": "https://github.com/dojo/dojo/archive/1.10.0.tar.gz",
-    "setten": "https://github.com/kitsonk/setten/archive/0.1.6.tar.gz"
+    "dojo": "https://github.com/dojo/dojo/archive/1.10.1.tar.gz",
+    "fs-extra": "0.12.x"
   },
   "amdDependencies": {
     "dojo": "dojo",
-    "dcl": "dcl",
-    "setten": "setten"
+    "dcl": "dcl"
   },
   "devDependencies": {
     "intern": "2.0.x",
