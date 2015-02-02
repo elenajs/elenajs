@@ -28,7 +28,8 @@
     "formidable": "1.0.x",
     "mimetype": "0.0.x",
     "dojo": "https://github.com/dojo/dojo/archive/1.10.1.tar.gz",
-    "fs-extra": "0.12.x"
+    "fs-extra": "0.12.x",
+    "toobusy": "~0.2.4"
   },
   "amdDependencies": {
     "dojo": "dojo",
