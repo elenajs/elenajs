@@ -36,8 +36,7 @@
     "dcl": "dcl"
   },
   "devDependencies": {
-    "intern": "2.0.x",
-    "grunt": "~0.4.2",
-    "grunt-jsdoc": "~0.5.1"
+    "grunt": "~0.4.5",
+    "grunt-jsdoc": "~0.6.7"
   }
 }
